@@ -22,7 +22,7 @@ export default function Card({ displayName }) {
 
     const getTask = async () => {
         await Axios.post('task/getByUser', {
-            user: "Mix Manaschai"
+            user: displayName
         })
             .then((res) => {
                 setTask(res.data);
