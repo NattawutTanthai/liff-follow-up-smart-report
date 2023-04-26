@@ -18,10 +18,10 @@ export default function Card({ displayName }) {
 
     useEffect(() => {
         getTask();
-    }, [task])
+    }, [])
 
     const getTask = async () => {
-        await Axios.post('task/getByUser', {
+        await Axios.post('task/get/user', {
             user: displayName
         })
             .then((res) => {
@@ -38,7 +38,7 @@ export default function Card({ displayName }) {
                 task.length == 0 ? <div className="flex justify-center h-40 mt-5">
                     <div className=" w-full mx-4 rounded-lg shadow-lg flex flex-col justify-center  border border-gray-500">
                         <div className='flex flex-row justify-center'>
-                            <h1 className='ml-2 mt-2 text-gray-500 text-2xl bg-red-500'>
+                            <h1 className='ml-2 mt-2 text-gray-500 text-2xl'>
                                 <b>ไม่มีข้อมูลของคุณ</b>
                             </h1>
                         </div>
